@@ -47,7 +47,7 @@ loom {
 
     if (project.platform.isForge) {
         forge {
-            mixinConfig("mixins.${mod_id}.json")
+            // No mixin configuration needed
         }
     }
 
@@ -154,12 +154,36 @@ tasks {
                 "ModSide" to "CLIENT",
                 "ForceLoadAsMod" to true,
                 "TweakOrder" to "0",
-                "MixinConfigs" to "mixins.${mod_id}.json",
                 "TweakClass" to "cc.polyfrost.oneconfig.loader.stage0.LaunchWrapperTweaker"
             )
         }
         dependsOn(shadowJar)
         archiveClassifier.set("")
         enabled = false
+    }
+}
+tasks.named("build") {
+    doLast {
+        // Path to the built JAR file after the build (from the build/libs directory)
+        val finalJar = file("build/libs/${mod_archives_name}-1.8.9-forge-${mod_version}.jar")
+
+        // Ensure the built JAR file exists before proceeding
+        if (finalJar.exists()) {
+            // Additional destination directory
+            val additionalDestDir = file("C:/Users/Truffle/AppData/Roaming/PrismLauncher/instances/1.8.9(1)/.minecraft/mods")
+
+            // Ensure the destination directory exists
+            additionalDestDir.mkdirs()
+
+            // Copy the final JAR to the additional directory
+            copy {
+                from(finalJar)
+                into(additionalDestDir)
+            }
+
+            println("JAR file copied to: ${additionalDestDir.absolutePath}")
+        } else {
+            println("Built JAR file does not exist: ${finalJar.absolutePath}")
+        }
     }
 }

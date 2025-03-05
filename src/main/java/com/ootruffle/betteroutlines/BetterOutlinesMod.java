@@ -1,6 +1,7 @@
 package com.ootruffle.betteroutlines;
 
 import com.ootruffle.betteroutlines.config.ModConfig;
+import com.ootruffle.betteroutlines.client.BlockOverlay;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -19,7 +20,6 @@ public class BetterOutlinesMod {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        // Register any necessary event handlers
-        MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(new BlockOverlay());
     }
 }
