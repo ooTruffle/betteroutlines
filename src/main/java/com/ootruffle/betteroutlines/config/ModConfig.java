@@ -39,7 +39,7 @@ public class ModConfig extends Config {
 public static int outlineTransparency = 255; 
 
     public ModConfig() {
-        super(new Mod(BetterOutlinesMod.NAME, ModType.UTIL_QOL), BetterOutlinesMod.MODID + ".json");
+        super(new Mod("Better Outlines", ModType.UTIL_QOL, "/assets/betteroutlines/icon.png"), "betteroutlines.json");
         initialize();
     }
 }
