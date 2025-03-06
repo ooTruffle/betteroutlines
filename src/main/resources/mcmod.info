@@ -2,13 +2,13 @@
   {
     "modid": "${id}",
     "name": "${name}",
-    "description": "",
+    "description": "Simple outlines mod",
     "version": "${version}",
     "mcversion": "${mcVersionStr}",
-    "url": "",
+    "url": "https://github.com/ooTruffle/betteroutlines",
     "updateUrl": "",
     "authorList": [
-      "Your Name"
+      "ooTruffle"
     ],
     "credits": "",
     "logoFile": "",

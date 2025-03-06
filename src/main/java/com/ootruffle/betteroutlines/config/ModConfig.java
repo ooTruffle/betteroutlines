@@ -5,9 +5,7 @@ import cc.polyfrost.oneconfig.config.annotations.*;
 import cc.polyfrost.oneconfig.config.data.InfoType;
 import cc.polyfrost.oneconfig.config.data.Mod;
 import cc.polyfrost.oneconfig.config.data.ModType;
-import cc.polyfrost.oneconfig.config.data.OptionSize;
 import cc.polyfrost.oneconfig.config.core.OneColor;
-import com.ootruffle.betteroutlines.BetterOutlinesMod;
 
 public class ModConfig extends Config {
     @Info(
